@@ -1,5 +1,7 @@
 {% set name = "winreg" %}
 {% set version = "4.1.2" %}
+{% set hash = "191c151604d765d0ad079b684eeacb3252c171392ad7beec593be0cd220dd032" %}
+{% set build_number = "0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +9,10 @@ package:
 
 source:
   url: https://github.com/GiovanniDicanio/WinReg/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 191c151604d765d0ad079b684eeacb3252c171392ad7beec593be0cd220dd032
+  sha256: {{ hash }}
 
 build:
-  number: 0
+  number: {{ build_number }}
   skip: true  # [not win]
   script: "cp WinReg\\WinReg.hpp %LIBRARY_PREFIX%\\include\\"
 
@@ -24,6 +26,9 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: Convenient high-level C++ wrapper around the Windows Registry API
+  dev_url: https://github.com/GiovanniDicanio/WinReg
+  doc_url: https://github.com/GiovanniDicanio/WinReg/tree/v4.1.2#readme
+  doc_src_url: https://github.com/GiovanniDicanio/WinReg/blob/master/README.md
 
 extra:
   recipe-maintainers:
