@@ -1,7 +1,7 @@
 {% set name = "winreg" %}
 {% set version = "4.1.2" %}
 {% set hash = "191c151604d765d0ad079b684eeacb3252c171392ad7beec593be0cd220dd032" %}
-{% set build_number = "0" %}
+{% set build_number = "1" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   number: {{ build_number }}
   skip: true  # [not win]
-  script: "cp WinReg\\WinReg.hpp %LIBRARY_PREFIX%\\include\\"
+  script: "copy /Y WinReg\\WinReg.hpp %LIBRARY_PREFIX%\\include\\"
 
 test:
   commands:
